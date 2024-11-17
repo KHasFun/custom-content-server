@@ -12,7 +12,7 @@ import (
 
 func main() {
 
-	listenAddress := ":8080"
+	listenAddress := "0.0.0.0:80"
 	Yt3Domain := "https://yt3.ggpht.com"
 	imageFolder := "/yt3"
 	contentFolder := "/content"
