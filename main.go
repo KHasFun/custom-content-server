@@ -14,8 +14,8 @@ func main() {
 
 	listenAddress := ":8080"
 	Yt3Domain := "https://yt3.ggpht.com"
-	imageFolder := "./images"
-	contentFolder := "./content"
+	imageFolder := "/yt3"
+	contentFolder := "/content"
 
 	metrics := NewMetrics()
 
@@ -29,7 +29,7 @@ func main() {
 		metrics.ServeHTTP(w, r)
 	})
 
-	http.HandleFunc("/image/", metrics.WithMetrics(func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/yt3/", metrics.WithMetrics(func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("%s %s %s\n", r.RemoteAddr, r.Method, r.URL)
 
 		u, _ := url.Parse(r.URL.String())
